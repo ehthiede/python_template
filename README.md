@@ -2,8 +2,13 @@
 
 # python_template
 This repository will provide a starting template for new Python-based projects.
-Here we pick a set of tools that we are familiar with; however, there are many
-tools extant that have similar functionality. 
+It demonstrates how to use tox to automate the testing process.  This cleans 
+up the testing and install process considerably, allowing the developer to
+test against multiple versions of python in one go, as well as to ensure that
+the package setup works, the documentation compiles, and the code obeys style-
+guidelines.  Moreover, it has the advantage that it tests an installed version
+of the code, not the local files.  This helps catch errors in python
+installation process.
 
 The following tools will be used:
  - [GitHub](github.com) - Version Control
@@ -11,14 +16,9 @@ The following tools will be used:
  - [pytest](https://docs.pytest.org/en/latest/) - Unit and Regression Testing
  - [CodeCov](https://codecov.io) - Testing Coverage Analysis
  - [Read the Docs](https://readthedocs.org) - Documentation
+ - [Tox](https://tox.readthedocs.io=en/latest/) - Wrapping all the tests together 
 
 ## Testing
 
-To run the test suite please first run `pip install -e .` in the base
-repository folder. This will register this repository with your local Python so
-that `import python_template` will work in any directory. Tests can then be run
-with `py.test -v`. If `pytest` is not found please use `pip install pytest` to
-aquire the module.
-
-
-
+If you have tox configured, you can run the tests simply by running the 
+command `tox`.  Easy peasy!
