@@ -1,0 +1,16 @@
+[paths]
+source =
+   python_template
+   */site-packages/python_template
+
+[run]
+branch = true
+source =
+    python_template
+    tests
+parallel = true
+
+[report]
+show_missing = true
+precision = 2
+omit = *migrations*

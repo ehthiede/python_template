@@ -5,11 +5,22 @@ language: python
 # Run jobs on container-based infrastructure, can be overridden per job
 sudo: false
 
+env:
+  matrix:
+    - TOXENV=check
+    - TOXENV=docs
+
 matrix:
   include:
     - python: 2.7
+      env:
+        - TOXENV=py27,report
     - python: 3.5
+      env:
+        - TOXENV=py35,report
     - python: 3.6
+      env:
+        - TOXENV=py36,report
 
 before_install:
 
