@@ -14,13 +14,13 @@ matrix:
   include:
     - python: 2.7
       env:
-        - TOXENV=py27,report
+        - TOXENV=py27,report,codecov
     - python: 3.5
       env:
-        - TOXENV=py35,report
+        - TOXENV=py35,report,codecov
     - python: 3.6
       env:
-        - TOXENV=py36,report
+        - TOXENV=py36,report,codecov
 
 before_install:
 
@@ -33,15 +33,10 @@ before_install:
   - pip install --upgrade pip setuptools
 
 # Install various required modules
-  - pip install pytest pytest-cov
-  - pip install codecov
-  - pip install numpy
-
-# Install the plugin locally
-  - pip install -e .
+  - pip install tox
 
 script:
-  - py.test -v --cov=./
+  - tox -v
 
 # after_success:
 #   - ./tools/travis-upload-wheel.sh
@@ -49,5 +44,6 @@ script:
 notifications:
     email: false
 
-after_success:
-  - codecov
+after_failure:
+  - more .tox/log/* | cat
+  - more .tox/*/log/* | cat
