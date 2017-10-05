@@ -47,3 +47,6 @@ notifications:
 after_failure:
   - more .tox/log/* | cat
   - more .tox/*/log/* | cat
+
+after_success:
+  - codecov
