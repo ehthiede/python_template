@@ -5,9 +5,9 @@ if __name__ == "__main__":
         name='python_template',
         version="0.2.1",
         description='A starting template for Python programs',
-        author='Daniel Smith',
-        author_email='dgasmith@vt.edu',
-        url="https://github.com/MolSSI/python_template",
+        author='Erik Thiede',
+        author_email='thiede@uchicago.edu',
+        url="https://github.com/ehthiede/python_template",
         license='BSD-3C',
         packages=setuptools.find_packages(),
         install_requires=[
